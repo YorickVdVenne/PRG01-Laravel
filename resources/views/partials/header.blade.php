@@ -4,7 +4,7 @@
             <a href="#" class="navbar-brand">Laravel Guide</a>
             <ul class="nav navbar-nav">
                 <li><a href="#">LogIn</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#">Test</a></li>
             </ul>
         </div>
     </div>
