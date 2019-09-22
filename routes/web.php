@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/about', 'HelloController@about'); 
-Route::get('/options', 'HelloController@options');
+Route::get('/restaurants', 'HelloController@restaurants');

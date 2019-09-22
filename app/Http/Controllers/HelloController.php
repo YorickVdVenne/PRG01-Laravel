@@ -12,16 +12,16 @@ class HelloController extends Controller
 
         return view('about');
     }
-    public function options()
+    public function restaurants()
     {
-       $options = [
-           'Option 1',
-           'Option 2',
-           'Option 3',
-           'Option 4',
+       $restaurants = [
+           'Restaurant 1',
+           'Restaurant 2',
+           'Restaurant 3',
+           'Restaurant 4',
        ];
 
 
-        return view('options', compact('options'));
+        return view('restaurants', compact('restaurants'));
     }
 }
