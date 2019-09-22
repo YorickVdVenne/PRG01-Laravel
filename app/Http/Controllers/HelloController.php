@@ -14,14 +14,9 @@ class HelloController extends Controller
     }
     public function restaurants()
     {
-       $restaurants = [
-           'Restaurant 1',
-           'Restaurant 2',
-           'Restaurant 3',
-           'Restaurant 4',
-       ];
-
-
+    
+       $restaurants = \App\Restaurant::all();
+       
         return view('restaurants', compact('restaurants'));
     }
 }
