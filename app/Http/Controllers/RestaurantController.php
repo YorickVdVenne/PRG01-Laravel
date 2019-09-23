@@ -11,6 +11,6 @@ class RestaurantController extends Controller
     
        $restaurants = \App\Restaurant::all();
        
-        return view('restaurants', compact('restaurants'));
+        return view('restaurant.index', compact('restaurants'));
     }
 }
