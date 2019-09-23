@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 Route::get('/about', 'HelloController@about'); 
 
-Route::get('/restaurants', 'RestaurantController@index');
+Route::get('/restaurant', 'RestaurantController@index');
+Route::post('/restaurant', 'RestaurantController@store');

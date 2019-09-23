@@ -13,4 +13,13 @@ class RestaurantController extends Controller
        
         return view('restaurant.index', compact('restaurants'));
     }
+    public function store()
+    {
+        $restaurant = new \App\Restaurant();
+
+        $restaurant->name = request('name');
+        $restaurant->save();
+
+        return redirect()->back(); 
+    }
 }
