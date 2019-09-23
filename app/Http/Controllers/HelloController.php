@@ -12,11 +12,4 @@ class HelloController extends Controller
 
         return view('about');
     }
-    public function restaurants()
-    {
-    
-       $restaurants = \App\Restaurant::all();
-       
-        return view('restaurants', compact('restaurants'));
-    }
 }
