@@ -12,7 +12,7 @@
 
         <button>Add Restaurant</button>
     </form>
-
+    <p style="color: red">@error('name') {{ $message }} @enderror</p>
     <ul>
         @forelse($restaurants as $restaurant) 
             <li>{{ $restaurant->name }}</li>

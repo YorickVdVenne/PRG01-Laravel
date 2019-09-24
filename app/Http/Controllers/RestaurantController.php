@@ -15,10 +15,11 @@ class RestaurantController extends Controller
     }
     public function store()
     {
-        $restaurant = new \App\Restaurant();
-
-        $restaurant->name = request('name');
-        $restaurant->save();
+        $data = request()->validate([
+            'name' => 'required|min:5|max:20'
+        ]);
+        
+       \app\Restaurant::create($data);
 
         return redirect()->back(); 
     }
