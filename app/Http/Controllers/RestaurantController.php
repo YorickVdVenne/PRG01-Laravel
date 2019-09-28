@@ -16,11 +16,11 @@ class RestaurantController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'name' => 'required|min:5|max:20'
+            'name' => 'required|max:20'
         ]);
         
-       \app\Restaurant::create($data);
+       \App\Restaurant::create($data);
 
-        return redirect()->back(); 
+        return redirect('/restaurant');
     }
 }
