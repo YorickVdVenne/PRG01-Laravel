@@ -29,9 +29,6 @@ Route::get('/customers/{customer}/edit', 'CustomerController@edit');
 Route::patch('/customers/{customer}', 'CustomerController@update');
 Route::delete('/customers/{customer}', 'CustomerController@destroy');
 
-
-
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'ProfilesController@index')->name('home');
