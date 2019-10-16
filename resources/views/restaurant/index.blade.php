@@ -1,23 +1,20 @@
-@extends('app')
-
-@section('title','Restaurants')
+@extends('layouts.app')
 
 @section('content')
-    <h1>Welcome to the restaurants page</h1>
-
-    <form action="/restaurant" method="post">
-        <input type="text" name="name" autocomplete="off">
-
-        @csrf
-
-        <button>Add Restaurant</button>
-    </form>
-    <p style="color: red">@error('name') {{ $message }} @enderror</p>
-    <ul>
-        @forelse($restaurants as $restaurant) 
-            <li>{{ $restaurant->name }}</li>
-        @empty
-            <li>No restaurants are currently available.</li>
-        @endforelse 
-    </ul>
+<div class="container">
+   <div class="row">
+       <h1>Restaurants</h1>
+   </div>
+   <div class="row pt-5">
+        <div class="col-4">
+            <img src="/png/McDonald's-Logo.png" class="w-100">
+        </div>
+        <div class="col-4">
+            <img src="/png/BurgerKing-Logo.png" class="w-100">
+        </div>
+        <div class="col-4">
+            <img src="/png/Domino's-Logo.png" class="w-100">
+        </div>
+   </div>
+</div>
 @endsection

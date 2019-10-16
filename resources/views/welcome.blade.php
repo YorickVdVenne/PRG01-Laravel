@@ -83,6 +83,9 @@
                 <div class="title m-b-md">
                     FoodStar
                 </div>
+                <div class="navbar">
+                    <a href="/restaurants">Let's eat!</a></li>
+                </div>
             </div>
         </div>
     </body>
