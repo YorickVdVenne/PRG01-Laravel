@@ -32,3 +32,5 @@ Route::delete('/customers/{customer}', 'CustomerController@destroy');
 Auth::routes();
 
 Route::get('/home', 'ProfilesController@index')->name('home');
+
+Route::get('/admin', 'AdminController@index');
