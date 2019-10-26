@@ -13,10 +13,10 @@
 <div>
     <a href="/admin/{{ $restaurant->id}}/edit">Edit</a>
 
-    <!-- <form method="post" action="/admin/{{ $restaurant->id }}">
+    <form method="post" action="/admin/{{ $restaurant->id }}">
         @method('DELETE')
         @csrf
         <button>Delete</button>
-    </form> -->
+    </form>
 </div>
     

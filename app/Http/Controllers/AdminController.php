@@ -63,6 +63,13 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
+    public function destroy(Restaurant $restaurant)
+    {
+        $restaurant->delete();
+
+        return redirect('/admin');
+    }
+
     protected function vailidatedData()
     {
         return request()->validate([

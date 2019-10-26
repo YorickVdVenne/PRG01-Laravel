@@ -41,4 +41,5 @@ Route::get('/home', 'ProfilesController@index')->name('home');
         Route::get('/{restaurant}', 'AdminController@show');
         Route::get('/{restaurant}/edit', 'AdminController@edit');
         Route::patch('/{restaurant}', 'AdminController@update');
+        Route::delete('/{restaurant}', 'AdminController@destroy');
     });
