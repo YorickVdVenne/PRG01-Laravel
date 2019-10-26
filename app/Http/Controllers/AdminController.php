@@ -25,6 +25,6 @@ class AdminController extends Controller
     {
         $restaurants = \App\Restaurant::all();
 
-        return view('admin', compact('restaurants'));
+        return view('admin.index', compact('restaurants'));
     }
 }
