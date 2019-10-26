@@ -23,6 +23,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        $restaurants = \App\Restaurant::all();
+
+        return view('admin', compact('restaurants'));
     }
 }
