@@ -18,8 +18,6 @@ Route::get('/', function () {
 Route::get('/about', 'HelloController@about'); 
 
 Route::get('/restaurants', 'RestaurantController@index');
-Route::post('/restaurants', 'RestaurantController@store');
-
 
 Route::get('/customers', 'CustomerController@index');
 Route::get('/customers/create', 'CustomerController@create');
@@ -37,4 +35,10 @@ Route::get('/home', 'ProfilesController@index')->name('home');
         Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
         Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
         Route::get('/', 'AdminController@index')->name('admin.dashboard');
+
+        Route::get('/restaurants/create', 'AdminController@create');
+        Route::post('/', 'AdminController@store');
+        Route::get('/{restaurant}', 'AdminController@show');
+        Route::get('/{restaurant}/edit', 'AdminController@edit');
+        Route::patch('/{restaurant}', 'AdminController@update');
     });

@@ -10,12 +10,13 @@
             Restaurants:
         </div>
         <div class="row">
-            <ul><a href="/restaurants/create">Add new Restaurant</a></ul>
-
+            <ul><a href="/admin/restaurants/create">Add new Restaurant</a></ul>
+        </div>
+        <div>
             @forelse($restaurants as $restaurant)
             <p><strong>
-                <a href="/restaurants/{{ $restaurant->id }}">{{ $restaurant->name }}</a>
-            </strong> ({{ $restaurant->image }})</p>
+                <a href="/admin/{{ $restaurant->id }}">{{ $restaurant->name }}</a>
+            </strong></p>
             @empty
                 <p>No Restaurants to show</p>
             @endforelse
