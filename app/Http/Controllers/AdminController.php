@@ -74,6 +74,7 @@ class AdminController extends Controller
     {
         return request()->validate([
             'name' => 'required',
+            'image' => 'required',
         ]);
     }
 }

@@ -1,6 +1,6 @@
 <h1>Add new Restaurant</h1>
 
-<form method="post" action="/admin" >
+<form method="post" action="/admin" enctype="multipart/form-data">
 
     @include('admin.form')
 
