@@ -16,7 +16,7 @@
             @forelse($restaurants as $restaurant)
             <p><strong>
                 <a href="/admin/{{ $restaurant->id }}">{{ $restaurant->name }}</a>
-            </strong>({{ $restaurant->image }})</p>
+            </strong></p>
             @empty
                 <p>No Restaurants to show</p>
             @endforelse

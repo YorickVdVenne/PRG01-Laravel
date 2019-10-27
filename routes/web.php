@@ -29,7 +29,7 @@ Route::delete('/customers/{customer}', 'CustomerController@destroy');
 
 Auth::routes();
 
-Route::get('/home', 'ProfilesController@index')->name('home');
+Route::get('/profile', 'ProfileController@post')->name('profile');
 
     Route::prefix('admin')->group(function() {
         Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
