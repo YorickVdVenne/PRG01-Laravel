@@ -2,12 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function post() 
+    public function __construct()
     {
-        return view('profiles.profile');
+        $this->middleware('auth');
+    }
+
+    public function index($user) 
+    {
+        $user = User::find($user);
+
+        return view('profile.index', [
+            'user' => $user,
+        ]);
+    }
+
+    public function edit(User $user)
+    {
+        return view('profile.edit', compact('user'));
+    }
+
+    public function update(User $user)
+    {
+        $user->update($this->vailidatedData());
+
+        return redirect()->back();
+    }
+
+    protected function vailidatedData()
+    {
+        return request()->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
     }
 }

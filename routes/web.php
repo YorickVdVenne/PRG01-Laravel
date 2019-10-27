@@ -29,7 +29,10 @@ Route::delete('/customers/{customer}', 'CustomerController@destroy');
 
 Auth::routes();
 
-Route::get('/profile', 'ProfileController@post')->name('profile');
+Route::get('/profile/{user}', 'ProfileController@index')->name('profile.show');
+Route::get('/profile/{user}/edit', 'ProfileController@edit');
+Route::patch('/profile/{user}', 'ProfileController@update');
+
 
     Route::prefix('admin')->group(function() {
         Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
