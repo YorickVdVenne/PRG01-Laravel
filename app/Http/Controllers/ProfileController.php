@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class ProfileController extends Controller
 {
@@ -12,17 +14,20 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
 
-    public function index($user) 
+    public function index() 
     {
-        $user = User::findOrFail($user);
+        $userId = Auth::user()->id;
+        $user = User::findOrFail($userId);
 
         return view('profile.index', [
             'user' => $user,
         ]);
     }
 
-    public function edit(User $user)
+    public function edit()
     {
+        $user = User::findOrFail(Auth::user()->id);
+
         return view('profile.edit', compact('user'));
     }
 

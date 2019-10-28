@@ -3,12 +3,9 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <h1>FoodStar</h1>
+            <h1>Restaurants</h1>
         </div>
             You are logged is as admin
-        <div class="row pt-4">
-            Restaurants:
-        </div>
         <div class="row">
             <ul><a href="/admin/restaurants/create">Add new Restaurant</a></ul>
         </div>

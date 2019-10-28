@@ -19,10 +19,10 @@ Auth::routes();
 
 Route::get('/restaurants', 'RestaurantController@index');
 
-Route::prefix('/profile')->group(function() {
-    Route::get('/{user}', 'ProfileController@index')->name('profile.show');
-    Route::get('/{user}/edit', 'ProfileController@edit');
-    Route::patch('/{user}', 'ProfileController@update');
+Route::prefix('profile')->group(function() {
+    Route::get('/', 'ProfileController@index')->name('profile.show');
+    Route::get('/edit', 'ProfileController@edit');
+    Route::patch('/', 'ProfileController@update');
 });
 
 Route::prefix('/admin')->group(function() {

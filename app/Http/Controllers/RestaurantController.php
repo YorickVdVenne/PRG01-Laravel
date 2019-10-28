@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Profile;
 use App\Restaurant;
 use Illuminate\Http\Request;
 
