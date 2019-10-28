@@ -16,7 +16,6 @@
                     <p><strong>{{ $user->email }}</strong></p>
                        
                     <div>
-                    <!-- <p><strong>{{ $user->profile->address }}</strong></p> -->
                         
                         <a href="/profile/{{ $user->id}}/edit">Edit</a>
                     </div>

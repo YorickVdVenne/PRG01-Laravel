@@ -17,6 +17,9 @@
             <p><strong>
                 <a href="/admin/{{ $restaurant->id }}">{{ $restaurant->name }}</a>
             </strong></p>
+            <p><strong>
+                <img src="/storage/{{ $restaurant->image }}">
+            </strong></p>
             @empty
                 <p>No Restaurants to show</p>
             @endforelse

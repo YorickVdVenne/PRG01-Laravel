@@ -12,10 +12,10 @@ class AdminController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:admin');
+    // }
 
     /**
      * Show the application dashboard.
@@ -38,7 +38,17 @@ class AdminController extends Controller
 
     public function store()
     {
-        Restaurant::create($this->vailidatedData());
+        $data = request()->validate([ 
+            'name' => 'required',
+            'image' => ['required', 'image'],
+        ]);
+
+        $imagePath = request('image')->store('uploads', 'public');
+
+        Restaurant::create([
+            'name' => $data['name'],
+            'image' => $imagePath,
+        ]);
 
         return redirect('/admin');
 
@@ -56,7 +66,6 @@ class AdminController extends Controller
 
     public function update(Restaurant $restaurant)
     {
-
         $restaurant->update($this->vailidatedData());
 
         return redirect('/admin');

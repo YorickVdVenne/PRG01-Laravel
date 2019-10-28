@@ -6,14 +6,17 @@
        <h1>Restaurants</h1>
    </div>
    <div class="row pt-5">
-        <div class="col-4">
-            <img src="/png/McDonald's-Logo.png" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="/png/BurgerKing-Logo.png" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="/png/Domino's-Logo.png" class="w-100">
+        <div>
+            @forelse($restaurants as $restaurant)
+            <p><strong>
+                {{ $restaurant->name }}
+            </strong></p>
+            <p><strong>
+                <img src="/storage/{{ $restaurant->image }}" class="w-50">
+            </strong></p>
+            @empty
+                <p>No Restaurants to show</p>
+            @endforelse
         </div>
    </div>
 </div>
