@@ -38,7 +38,6 @@ class AdminController extends Controller
 
     public function store()
     {
-
         Restaurant::create($this->vailidatedData());
 
         return redirect('/admin');
@@ -74,6 +73,7 @@ class AdminController extends Controller
     {
         return request()->validate([
             'name' => 'required',
+            'image' => 'required|image',
         ]);
     }
 }

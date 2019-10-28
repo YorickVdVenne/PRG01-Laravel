@@ -1,9 +1,13 @@
-<h1>Add new Restaurant</h1>
+@extends('layouts.app')
 
-<form method="post" action="/admin">
+@section('content')
+    <h1>Add new Restaurant</h1>
 
-    @include('admin.form')
+    <form method="post" action="/admin" enctype="multipart/form-data">
 
-    <button>Add New Restaurant</button>
+        @include('admin.form')
 
-</form> 
+        <button>Add New Restaurant</button>
+
+    </form> 
+@endsection
