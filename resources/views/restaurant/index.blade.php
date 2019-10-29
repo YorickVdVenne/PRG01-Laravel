@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="container">
+    <form action="{{URL::to('/search')}}" method="post" role="search">
+    @csrf 
+    <form class="form-inline ">
+        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+            aria-label="Search">
+    </form>
    <div class="row">
        <h1>Restaurants</h1>
    </div>
