@@ -3,7 +3,7 @@
 @section('content')
     <h1>Edit Profile Details</h1>
 
-    <form method="post" action="/profile/{{ $user->id}}" >
+    <form method="post" action="/profile" >
 
         @method('PATCH')
 

@@ -31,11 +31,13 @@ class ProfileController extends Controller
         return view('profile.edit', compact('user'));
     }
 
-    public function update(User $user)
+    public function update()
     {
+        $user = User::findOrFail(Auth::user()->id);
+
         $user->update($this->vailidatedData());
 
-        return redirect()->back();
+        return redirect('/profile');
     }
 
     protected function vailidatedData()

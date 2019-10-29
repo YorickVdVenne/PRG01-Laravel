@@ -17,7 +17,7 @@
                        
                     <div>
                         
-                        <a href="/profile/{{ $user->id}}/edit">Edit</a>
+                        <a href="/profile/edit">Edit</a>
                     </div>
                 </div>
             </div>   
