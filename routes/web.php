@@ -17,7 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/restaurants', 'RestaurantController@index');
+Route::prefix('/restaurants')->group(function() {
+Route::get('/', 'RestaurantController@index');
+Route::get('/{restaurant}', 'RestaurantController@show');
+});
 
 Route::prefix('/profile')->group(function() {
     Route::get('/', 'ProfileController@index')->name('profile.show');

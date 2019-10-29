@@ -11,8 +11,13 @@
         </div>
         <div>
             @forelse($restaurants as $restaurant)
+            Name:
             <p><strong>
                 <a href="/admin/{{ $restaurant->id }}">{{ $restaurant->name }}</a>
+            </strong></p>
+            Category:
+            <p><strong>
+            {{ $restaurant->category }}
             </strong></p>
             <p><strong>
                 <img src="/storage/{{ $restaurant->image }}">

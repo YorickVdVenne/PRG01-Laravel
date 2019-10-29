@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
     <h1>Restaurant Details</h1>
 
     <div>
@@ -9,6 +10,9 @@
 
     <strong>Name</strong>
     <p>{{ $restaurant->name }}</p>
+
+    <strong>Category</strong>
+    <p>{{ $restaurant->category }}</p>
 
     <strong>Image</strong>
     <p><img src="/storage/{{ $restaurant->image }}"></p>
@@ -22,4 +26,5 @@
             <button>Delete</button>
         </form>
     </div>
+</div>
 @endsection 

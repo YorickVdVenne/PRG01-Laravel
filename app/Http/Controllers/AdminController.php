@@ -40,6 +40,7 @@ class AdminController extends Controller
     {
         $data = request()->validate([ 
             'name' => 'required',
+            'category' => 'required',
             'image' => ['required', 'image'],
         ]);
 
@@ -47,6 +48,7 @@ class AdminController extends Controller
 
         Restaurant::create([
             'name' => $data['name'],
+            'category' => $data['category'],
             'image' => $imagePath,
         ]);
 

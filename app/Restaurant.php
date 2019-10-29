@@ -8,6 +8,6 @@ class Restaurant extends Model
 {
     protected $guarded = [];
     protected $table = 'restaurants';
-    protected $fillable = ['name', 'image'];
+    protected $fillable = ['name', 'category', 'image'];
 }
  

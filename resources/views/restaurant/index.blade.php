@@ -9,7 +9,7 @@
         <div>
             @forelse($restaurants as $restaurant)
             <p><strong>
-                {{ $restaurant->name }}
+            <a href="/restaurants/{{ $restaurant->id }}">{{ $restaurant->name }}</a>
             </strong></p>
             <p><strong>
                 <img src="/storage/{{ $restaurant->image }}" class="w-50">

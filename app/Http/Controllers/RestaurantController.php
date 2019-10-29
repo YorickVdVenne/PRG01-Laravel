@@ -14,4 +14,9 @@ class RestaurantController extends Controller
 
         return view('restaurant.index', compact('restaurants'));
     }
+
+    public function show(Restaurant $restaurant)
+    {
+        return view('restaurant.show', compact('restaurant'));
+    }
 }
