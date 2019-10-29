@@ -66,7 +66,18 @@ class AdminController extends Controller
 
     public function update(Restaurant $restaurant)
     {
-        $restaurant->update($this->vailidatedData());
+        $data = request()->validate([ 
+            'name' => 'required',
+            'image' => ['required', 'image'],
+        ]);
+
+        $imagePath = request('image')->store('uploads', 'public');
+
+        $restaurant->update([
+            'name' => $data['name'],
+            'image' => $imagePath,
+        ]);
+        // $restaurant->update($this->vailidatedData());
 
         return redirect('/admin');
     }
@@ -78,11 +89,4 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
-    protected function vailidatedData()
-    {
-        return request()->validate([
-            'name' => 'required',
-            'image' => 'required|image',
-        ]);
-    }
 }

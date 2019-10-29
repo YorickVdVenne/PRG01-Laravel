@@ -5,6 +5,7 @@
 </div>
 <div class="row">
     <label for="image">Restaurant Image</label>
+    <img src="/storage/{{ $restaurant->image }}">
     <input type="file" class="form-control-file" id="image" name="image">
     @error('image') <p style="color: red">{{ $message }}</p> @enderror
 </div>

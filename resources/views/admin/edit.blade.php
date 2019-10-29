@@ -1,11 +1,15 @@
-<h1>Edit Restaurant Details</h1>
+@extends('layouts.app')
 
-<form method="post" action="/admin/{{$restaurant->id}}" >
+@section('content')
+    <h1>Edit Restaurant Details</h1>
 
-    @method('PATCH')
+    <form method="post" action="/admin/{{$restaurant->id}}" enctype="multipart/form-data">
 
-    @include('admin.form')
+        @method('PATCH')
 
-    <button>Save Restaurant</button>
-    
-</form> 
+        @include('admin.form')
+
+        <button>Save Restaurant</button>
+        
+    </form> 
+@endsection

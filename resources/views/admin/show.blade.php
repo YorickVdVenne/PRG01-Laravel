@@ -1,22 +1,25 @@
-<h1>Restaurant Details</h1>
+@extends('layouts.app')
 
-<div>
-    <a href="/admin"> < Back</a>
-</div>
+@section('content')
+    <h1>Restaurant Details</h1>
 
-<strong>Name</strong>
-<p>{{ $restaurant->name }}</p>
+    <div>
+        <a href="/admin"> < Back</a>
+    </div>
 
-<strong>Email</strong>
-<p>{{ $restaurant->email }}</p>
+    <strong>Name</strong>
+    <p>{{ $restaurant->name }}</p>
 
-<div>
-    <a href="/admin/{{ $restaurant->id}}/edit">Edit</a>
+    <strong>Image</strong>
+    <p><img src="/storage/{{ $restaurant->image }}"></p>
 
-    <form method="post" action="/admin/{{ $restaurant->id }}">
-        @method('DELETE')
-        @csrf
-        <button>Delete</button>
-    </form>
-</div>
-    
+    <div>
+        <a href="/admin/{{ $restaurant->id}}/edit">Edit</a>
+
+        <form method="post" action="/admin/{{ $restaurant->id }}">
+            @method('DELETE')
+            @csrf
+            <button>Delete</button>
+        </form>
+    </div>
+@endsection 
