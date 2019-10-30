@@ -22,6 +22,8 @@ Route::get('/', 'RestaurantController@index');
 Route::get('/{restaurant}', 'RestaurantController@show');
 });
 
+Route::any('/search', 'SearchController@search');
+
 Route::prefix('/profile')->group(function() {
     Route::get('/', 'ProfileController@index')->name('profile.show');
     Route::get('/edit', 'ProfileController@edit');

@@ -2,12 +2,17 @@
 
 @section('content')
 <div class="container">
-    <form action="{{URL::to('/search')}}" method="post" role="search">
-    @csrf 
-    <form class="form-inline ">
-        <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-            aria-label="Search">
-    </form>
+<form action="/search" method="POST" role="search">
+    @csrf
+    <div class="input-group">
+        <input type="text" class="form-control" name="q" autocomplete="off"
+            placeholder="Search restaurants"> <span class="input-group-btn">
+            <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+            </button>
+        </span>
+    </div>
+</form>
    <div class="row">
        <h1>Restaurants</h1>
    </div>
