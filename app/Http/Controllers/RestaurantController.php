@@ -10,9 +10,16 @@ class RestaurantController extends Controller
 {
     public function index()
     {
-        $restaurants = Restaurant::all();
+        if (request()->has('category')) {
+            $restaurants = Restaurant::where('category', request('category'))
+            ->paginate(5)
+            ->appends('category', request('category'));
+        }
+        else {
+            $restaurants = Restaurant::paginate(5);
+        }
 
-        return view('restaurant.index', compact('restaurants'));
+        return view('restaurant.index')->with('restaurants', $restaurants);
     }
 
     public function show(Restaurant $restaurant)
