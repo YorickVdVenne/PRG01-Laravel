@@ -45,5 +45,8 @@
                 @endforelse
             </div>
     </div>
+
+    {{ $restaurants->links() }}
+
 </div>
 @endsection
