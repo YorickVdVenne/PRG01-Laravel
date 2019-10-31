@@ -6,7 +6,7 @@
 
 <div>
     <label for="email">Email</label>
-    <input type="text" name="email" autocomplete="off" value="{{ old('email') ?? $user->email }}">
+    <input type="email" name="email" autocomplete="off" value="{{ old('email') ?? $user->email }}">
     @error('email') <p style="color: red">{{ $message }}</p> @enderror 
 </div>
 
