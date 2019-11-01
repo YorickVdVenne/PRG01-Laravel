@@ -21,14 +21,14 @@ class AdminRestaurantController extends Controller
     {
         $restaurants = Restaurant::all();
 
-        return view('admin.restaurants', compact('restaurants'));
+        return view('admin.restaurant.index', compact('restaurants'));
     }
 
     public function create()
     {
         $restaurant = new Restaurant();
 
-        return view('admin.createRestaurant', compact('restaurant'));
+        return view('admin.restaurant.create', compact('restaurant'));
     }
 
     public function store()
@@ -53,12 +53,12 @@ class AdminRestaurantController extends Controller
 
     public function show(Restaurant $restaurant)
     {
-       return view('admin.showRestaurant', compact('restaurant'));
+       return view('admin.restaurant.show', compact('restaurant'));
     }
 
     public function edit(Restaurant $restaurant)
     {
-        return view('admin.editRestaurant', compact('restaurant'));
+        return view('admin.restaurant.edit', compact('restaurant'));
     }
 
     public function update(Restaurant $restaurant)
