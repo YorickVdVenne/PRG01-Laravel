@@ -34,7 +34,7 @@ class AdminRestaurantController extends Controller
     public function store()
     {   
 
-        $published = Request::has('published') ? true : false; 
+        $publish = Request::has('publish') ? true : false; 
 
         $data = request()->validate([ 
             'name' => 'required',
@@ -48,7 +48,7 @@ class AdminRestaurantController extends Controller
             'name' => $data['name'],
             'category' => $data['category'],
             'image' => $imagePath,
-            'published' => $published,
+            'publish' => $publish,
         ]);
 
         return redirect('/admin/restaurants');

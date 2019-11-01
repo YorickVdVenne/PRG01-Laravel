@@ -25,9 +25,9 @@
 </div>
 
 <div>
-    <label for="">Published</label>
+    <label for="">Publish</label>
     <div class="checkbox">
-        <input type="checkbox" name="published" vlaue="1">
+        <input type="checkbox" name="publish" vlaue="1">
     </div>
 
     @csrf

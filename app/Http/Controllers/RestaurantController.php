@@ -15,12 +15,12 @@ class RestaurantController extends Controller
 
         $restaurants = Restaurant::where(function($restaurant){
             $restaurant->where('category', request('category'));
-            $restaurant->where('published', '1');
+            $restaurant->where('publish', '1');
         })->paginate(5)->appends('category', request('category'));
 
      }
      else {
-        $restaurants = Restaurant::where('published', '1')->paginate(5);
+        $restaurants = Restaurant::where('publish', '1')->paginate(5);
         }
 
         return view('restaurant.index', compact('restaurants'));
