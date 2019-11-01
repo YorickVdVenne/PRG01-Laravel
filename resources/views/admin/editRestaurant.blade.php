@@ -4,9 +4,9 @@
     <div class="container">
         <h1>Edit Restaurant Details</h1>
 
-        <a href="/admin/{{$restaurant->id}}"> < Back</a>
+        <a href="/admin/restaurants/{{$restaurant->id}}"> < Back</a>
 
-        <form method="post" action="/admin/{{$restaurant->id}}" enctype="multipart/form-data">
+        <form method="post" action="/admin/restaurants/{{$restaurant->id}}" enctype="multipart/form-data">
 
             @method('PATCH')
 

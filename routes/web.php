@@ -35,10 +35,11 @@ Route::prefix('/admin')->group(function() {
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
 
-    Route::get('/restaurants/create', 'AdminController@create');
-    Route::post('/', 'AdminController@store');
-    Route::get('/{restaurant}', 'AdminController@show');
-    Route::get('/{restaurant}/edit', 'AdminController@edit');
-    Route::patch('/{restaurant}', 'AdminController@update');
-    Route::delete('/{restaurant}', 'AdminController@destroy');
+    Route::get('/restaurants', 'AdminRestaurantController@index');
+    Route::get('/restaurants/create', 'AdminRestaurantController@create');
+    Route::post('/restaurants', 'AdminRestaurantController@store');
+    Route::get('/restaurants/{restaurant}', 'AdminRestaurantController@show');
+    Route::get('/restaurants/{restaurant}/edit', 'AdminRestaurantController@edit');
+    Route::patch('/restaurants/{restaurant}', 'AdminRestaurantController@update');
+    Route::delete('/restaurants/{restaurant}', 'AdminRestaurantController@destroy');
 });
