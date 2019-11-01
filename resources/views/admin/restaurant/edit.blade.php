@@ -10,7 +10,7 @@
 
             @method('PATCH')
 
-            @include('admin.form')
+            @include('admin.restaurant.form')
 
             <button>Save Restaurant</button>
             

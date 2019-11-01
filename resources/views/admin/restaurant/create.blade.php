@@ -5,7 +5,7 @@
 
     <form method="post" action="/admin/restaurants" enctype="multipart/form-data">
 
-        @include('admin.form')
+        @include('admin.restaurant.form')
 
         <button>Add New Restaurant</button>
 

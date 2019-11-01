@@ -42,4 +42,10 @@ Route::prefix('/admin')->group(function() {
     Route::get('/restaurants/{restaurant}/edit', 'AdminRestaurantController@edit');
     Route::patch('/restaurants/{restaurant}', 'AdminRestaurantController@update');
     Route::delete('/restaurants/{restaurant}', 'AdminRestaurantController@destroy');
+
+    Route::get('/users', 'AdminUserController@index');
+    Route::get('/users/{user}', 'AdminUserController@show');
+    Route::get('/users/{user}/edit', 'AdminUserController@edit');
+    Route::patch('/users/{user}', 'AdminUserController@update');
+    Route::delete('/users/{user}', 'AdminUserController@destroy');
 });
