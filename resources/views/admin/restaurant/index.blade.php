@@ -15,13 +15,6 @@
             <p><strong>
                 <a href="/admin/restaurants/{{ $restaurant->id }}">{{ $restaurant->name }}</a>
             </strong></p>
-            Category:
-            <p><strong>
-            {{ $restaurant->category }}
-            </strong></p>
-            <p><strong>
-                <img src="/storage/{{ $restaurant->image }}">
-            </strong></p>
             @empty
                 <p>No Restaurants to show</p>
             @endforelse

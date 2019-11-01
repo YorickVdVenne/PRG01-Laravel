@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 use App\Restaurant;
 
 class AdminRestaurantController extends Controller
@@ -32,7 +32,10 @@ class AdminRestaurantController extends Controller
     }
 
     public function store()
-    {
+    {   
+
+        $published = Request::has('published') ? true : false; 
+
         $data = request()->validate([ 
             'name' => 'required',
             'category' => 'required',
@@ -45,6 +48,7 @@ class AdminRestaurantController extends Controller
             'name' => $data['name'],
             'category' => $data['category'],
             'image' => $imagePath,
+            'published' => $published,
         ]);
 
         return redirect('/admin/restaurants');

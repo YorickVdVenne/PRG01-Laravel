@@ -35,7 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <div class="pl-3"><a href="/restaurants">Restaurants</a></div>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

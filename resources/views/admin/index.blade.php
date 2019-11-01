@@ -7,6 +7,7 @@
         </div>
             You are logged is as admin
         <div>
+        <p></p>
             <a href="/admin/restaurants">Go to Restaurants overview</a>
         </div>
         <p></p>

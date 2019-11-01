@@ -24,4 +24,10 @@
     @error('image') <p style="color: red">{{ $message }}</p> @enderror
 </div>
 
+<div>
+    <label for="">Published</label>
+    <div class="checkbox">
+        <input type="checkbox" name="published" vlaue="1">
+    </div>
+
     @csrf
