@@ -83,6 +83,8 @@ class AdminRestaurantController extends Controller
             'name' => $data['name'],
             'category' => $data['category'],
             'image' => $imagePath,
+            'publish' => '1',
+            'company_id' => '1',
         ]);
 
         return redirect('/admin/restaurants');
