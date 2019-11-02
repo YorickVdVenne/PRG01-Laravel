@@ -15,6 +15,11 @@
             <p><strong>
                 <a href="/admin/restaurants/{{ $restaurant->id }}">{{ $restaurant->name }}</a>
             </strong></p>
+            Company:
+            <p><strong>
+                {{ $restaurant->company->name }}
+            </strong></p>
+            <p>---------------------------------------------------------------------------------------------------------</p>
             @empty
                 <p>No Restaurants to show</p>
             @endforelse

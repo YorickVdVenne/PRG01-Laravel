@@ -23,6 +23,16 @@
     <input type="file" class="form-control-file" name="image">
     @error('image') <p style="color: red">{{ $message }}</p> @enderror
 </div>
+<p></p>
+<div>
+    <label for="company_id">Company</label>
+    <select name="company_id" id="company_id">
+        @foreach ($companies as $company)
+            <option value="{{ $company->id }}">{{ $company->name }}</option>
+        @endforeach
+    </select>
+</div>
+
 
 <div>
     <label for="">Publish</label>

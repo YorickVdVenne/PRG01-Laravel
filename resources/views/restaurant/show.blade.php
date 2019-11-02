@@ -13,8 +13,5 @@
     <strong>Category</strong>
     <p>{{ $restaurant->category }}</p>
 
-    <div>
-    <strong>Products:</strong>
-
 </div>
 @endsection

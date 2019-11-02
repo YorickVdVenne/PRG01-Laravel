@@ -12,7 +12,7 @@
 
             @include('admin.user.form')
 
-            <button>Save Restaurant</button>
+            <button>Save User</button>
             
         </form> 
     </div>

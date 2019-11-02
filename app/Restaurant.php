@@ -9,5 +9,10 @@ class Restaurant extends Model
     protected $guarded = [];
     protected $table = 'restaurants';
     protected $fillable = ['name', 'category', 'image', 'publish'];
+
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
  

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Request;
+use App\Company;
 use App\Restaurant;
 
 class AdminRestaurantController extends Controller
@@ -19,7 +20,7 @@ class AdminRestaurantController extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::all();
+        $restaurants = Restaurant::with('company')->get();
 
         return view('admin.restaurant.index', compact('restaurants'));
     }
@@ -27,8 +28,9 @@ class AdminRestaurantController extends Controller
     public function create()
     {
         $restaurant = new Restaurant();
+        $companies = Company::all();
 
-        return view('admin.restaurant.create', compact('restaurant'));
+        return view('admin.restaurant.create', compact('restaurant', 'companies'));
     }
 
     public function store()
@@ -40,6 +42,7 @@ class AdminRestaurantController extends Controller
             'name' => 'required',
             'category' => 'required',
             'image' => ['required', 'image'],
+            'company_id' => 'required',
         ]);
 
         $imagePath = request('image')->store('uploads', 'public');
@@ -49,6 +52,7 @@ class AdminRestaurantController extends Controller
             'category' => $data['category'],
             'image' => $imagePath,
             'publish' => $publish,
+            'company_id' => $data['company_id'],
         ]);
 
         return redirect('/admin/restaurants');
