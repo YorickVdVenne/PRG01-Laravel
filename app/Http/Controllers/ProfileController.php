@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Http\Request;
+use Request;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -33,11 +33,27 @@ class ProfileController extends Controller
 
     public function update()
     {
-        $user = User::findOrFail(Auth::user()->id);
+        $user_id = Request::input('user_id');
+        $user = User::find($user_id);
 
-        $user->update($this->vailidatedData());
+        if($user_id == null) {
+            $user = Auth::user();
+        }
 
-        return redirect('/profile');
+        //Preventing Breaking Access Controll 
+        $authenticated_user = Auth::user();
+        if ($authenticated_user->id != $user->id) {
+            return 'Unauthorised';
+        }
+
+        if ($user) {
+            $user->update($this->vailidatedData());
+
+            return redirect('/profile');
+        }
+        else {
+            return 'no user found';
+        }
     }
 
     protected function vailidatedData()
