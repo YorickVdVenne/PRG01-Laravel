@@ -21,8 +21,9 @@ class AdminRestaurantController extends Controller
     public function index()
     {
         $restaurants = Restaurant::with('company')->get();
+        $companies = Company::with('restaurants')->get();
 
-        return view('admin.restaurant.index', compact('restaurants'));
+        return view('admin.restaurant.index', compact('companies', 'restaurants'));
     }
 
     public function create()

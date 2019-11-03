@@ -37,12 +37,11 @@
             </div>
             <p></p>
 
-            <div>
-                <label for="">Publish</label>
-                <div class="checkbox">
-                    <input type="checkbox" name="publish" value="{{ $restaurant->publish }}">
-                </div>
-
+            <div class="custom-control custom-switch ml-1">
+                <input type="checkbox" class="custom-control-input" name="publish" id="customSwitch1">
+                <label class="custom-control-label" for="customSwitch1">Publish Restaurant</label>
+            </div>
+<p></p>
     @csrf
 
             <button>Save Restaurant</button>

@@ -24,5 +24,19 @@
                 <p>No Restaurants to show</p>
             @endforelse
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                @foreach($companies as $company)
+                    <h3>{{ $company->name }}</h3>
+
+                    <ul>
+                        @foreach($company->restaurants as $restaurant)
+                            <li>{{ $restaurant->name }}</li>
+                        @endforeach
+                    </ul>
+                @endforeach
+            </div>
+        </div>
     </div>
 @endsection

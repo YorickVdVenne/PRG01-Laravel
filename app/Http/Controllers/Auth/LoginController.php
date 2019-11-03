@@ -25,6 +25,9 @@ class LoginController extends Controller
      *
      * @var string
      */
+    protected $maxLoginAttempts = 10; // Amount of bad attempts user can make
+    protected $lockoutTime = 300; // Time for which user is going to be blocked in seconds
+     
     protected $redirectTo = '/restaurants';
 
     /**
