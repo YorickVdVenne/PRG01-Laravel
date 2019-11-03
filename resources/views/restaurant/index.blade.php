@@ -40,6 +40,7 @@
                 <p><strong>
                     <img src="/storage/{{ $restaurant->image }}" class="w-50">
                 </strong></p>
+                <p>-------------------------------------------------------------------------------------------------------------------</p>
                 @empty
                     <p>No Restaurants to show</p>
                 @endforelse

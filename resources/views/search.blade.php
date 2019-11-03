@@ -17,7 +17,7 @@
             <tbody>
                 @foreach($details as $restaurant)
                 <tr>
-                    <td>{{$restaurant->name}}</td>
+                    <td><a href="/restaurants/{{ $restaurant->id }}">{{$restaurant->name}}</a></td>
                     <td>{{$restaurant->category}}</td>
                 </tr>
                 @endforeach

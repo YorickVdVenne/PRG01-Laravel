@@ -16,6 +16,7 @@
         <option value="Thais">Thais</option>
         <option value="Grieks">Grieks</option> 
     </select>
+    @error('category') <p style="color: red">{{ $message }}</p> @enderror
 </div>
 <div>
     <label for="image">Restaurant Image</label>

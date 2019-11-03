@@ -18,7 +18,7 @@
             <div>
                 <label for="category">Category</label>
                 <select name="category">
-                    <option value="">{{ $restaurant->category }}</option>
+                    <option value="{{ $restaurant->category }}">{{ $restaurant->category }}</option>
                     <option value="Pizza">Pizza</option>
                     <option value="Sushi">Sushi</option>
                     <option value="Burgers">Burgers</option>
@@ -28,6 +28,7 @@
                     <option value="Thais">Thais</option>
                     <option value="Grieks">Grieks</option> 
                 </select>
+                @error('category') <p style="color: red">{{ $message }}</p> @enderror
             </div>
             <div>
                 <label for="image">Restaurant Image</label>
@@ -38,8 +39,8 @@
             <p></p>
 
             <div class="custom-control custom-switch ml-1">
-                <input type="checkbox" class="custom-control-input" name="publish" id="customSwitch1">
-                <label class="custom-control-label" for="customSwitch1">Publish Restaurant</label>
+                <input type="checkbox" class="custom-control-input" name="publish" id="publish">
+                <label class="custom-control-label" for="publish">Publish Restaurant</label>
             </div>
 <p></p>
     @csrf

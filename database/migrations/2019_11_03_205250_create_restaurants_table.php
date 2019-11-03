@@ -19,7 +19,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('name');
             $table->string('category');
             $table->string('image');
-            $table->boolean('publish')->default(1);
+            $table->boolean('publish')->nullable();
             $table->timestamps();
         });
     }
