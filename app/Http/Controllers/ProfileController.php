@@ -47,7 +47,7 @@ class ProfileController extends Controller
         }
 
         if ($user) {
-            $user->update($this->vailidatedData());
+            $user->update($this->validatedData());
 
             return redirect('/profile');
         }
@@ -56,7 +56,7 @@ class ProfileController extends Controller
         }
     }
 
-    protected function vailidatedData()
+    protected function validatedData()
     {
         return request()->validate([
             'name' => 'required',
